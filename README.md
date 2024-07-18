@@ -212,16 +212,21 @@ Dentro de la carpeta `(routes)/loved-products/` la carpeta `components` y dentro
 
 Dentro de la carpeta de `components` creamos una nueva carpeta de nombre `shared`. Esta carpeta va a ser de componentes compartidos.
 
-# STRIPE
 
-- Se realizaran los pagos mediante `STRIPE`.
+<!-- STRIPE NO CUBRE ARGENTINA Y PARA ESO VAMOS A USAR MERCADO PAGO -->
 
-## Intalacion:
+# MERCADO PAGO
 
-`npm install --save @stripe/react-stripe-js @stripe/stripe-js`
+# API
 
-_"Esta instalacion se hara dentro de la carpeta **`frontend-gramapheniers`**"_
+Dentro de la carpeta `api` creamos un nuevo directorio de nombre `payments.tsx`
 
-- _continuamos en `cart/page.tsx`_
+# AXIOS
 
-En el panel de `STRIPE` vamos al boton de `Desarrolladores` Dentro accedemos a `Claves API`. Generar claves.
+- Biblioteca de JavaScript que permite hacer solicitudes HTTP desde el navegador y Node.js.
+
+## INSTALACION
+
+`npm install axios`
+
+...continuamos con `payments.tsx`.

@@ -2,22 +2,39 @@
 
 import { useCart } from "@/hooks/use-cart";
 
+import { loadStripe } from "@stripe/stripe-js";
+
 import { formatPrice } from "@/lib/formatPrice";
+
+import { makePaymentRequest } from "@/api/payments";
 
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import CartItem from "./components/cart-item";
 
-import { loadStripe } from "@stripe/stripe-js";
+import CartItem from "./components/cart-item";
 
 const Page = () => {
   const { items, removeAll } = useCart();
 
   const prices = items.map((product) => product.attributes.price);
   const totalPrice = prices.reduce((total, price) => total + price, 0);
-  const stripePromise = loadStripe();
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
+  );
 
-  const buyStripe = async () => {};
+  const buyStripe = async () => {
+    try {
+      const stripe = await stripePromise;
+      const res = await makePaymentRequest.pot("/api/orders", {
+        products: items,
+      });
+      await stripe?.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="max-w-6xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
@@ -47,14 +64,18 @@ const Page = () => {
               <p>{formatPrice(totalPrice)}</p>
             </div>
 
+            {/* HACER LA COMPRA */}
+
             <div className="flex items-center justify-center w-full mt-3">
               <Button
                 className="w-full"
-                onClick={() => console.log("Comprar realizada")}
+                // TODO: realizar la funcion de pago.
+                onClick={buyStripe}
               >
                 Comprar
               </Button>
             </div>
+            
           </div>
         </div>
       </div>
