@@ -41,9 +41,9 @@ const CarouselTextBanner = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-stone-200/30 dark:bg-primary  dark:text-black px-2 w-full shadow-md">
+    <div className="bg-stone-100/30 dark:bg-stone-800/10  dark:text-white px-2 w-full shadow-md">
       <Carousel
-        className="w-full max-w-4xl mx-auto"
+        className="w-full max-w-4xl mx-auto" 
         plugins={[
           Autoplay({
             dedlay: 2500,
@@ -60,10 +60,10 @@ const CarouselTextBanner = () => {
               <div>
                 <Card className="shadow-none border-none bg-transparent">
                   <CardContent className="flex flex-col justify-center items-center p-2 text-center">
-                    <p className="sm:text-xs text-wrap dark:text-secondary font-bold border border-gray-400 border-dashed px-4 py-2 rounded-lg shadow-md">
+                    <p className="sm:text-xs text-wrap dark:text-secondary font-bold border border-gray-400 border-dashed px-4 py-2 rounded-lg shadow-md dark:text-white">
                       {title}
                     </p>
-                    <p className="text-xs sm:text-sm text-wrap dark:text-secondary mt-5">
+                    <p className="text-xs sm:text-sm text-wrap dark:text-secondary mt-5 dark:text-white">
                       {description}
                     </p>
                   </CardContent>

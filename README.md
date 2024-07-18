@@ -212,7 +212,6 @@ Dentro de la carpeta `(routes)/loved-products/` la carpeta `components` y dentro
 
 Dentro de la carpeta de `components` creamos una nueva carpeta de nombre `shared`. Esta carpeta va a ser de componentes compartidos.
 
-
 <!-- STRIPE NO CUBRE ARGENTINA Y PARA ESO VAMOS A USAR MERCADO PAGO -->
 
 # MERCADO PAGO
@@ -230,3 +229,15 @@ Dentro de la carpeta `api` creamos un nuevo directorio de nombre `payments.tsx`
 `npm install axios`
 
 ...continuamos con `payments.tsx`.
+
+# STRAPI
+
+En el panel de `strapi` dentro de `Content-Type Builder` creamos una nueva coleccion de tipo `+ Create new collection type` de nombre `Order`.
+
+dentro de orderagregamos un campo de tipo `texto` con el nombre de `stripeId` y otro de tipo `JSON` con el nombre `products`. Damos `Save`.
+
+
+
+
+
+

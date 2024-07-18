@@ -46,7 +46,7 @@ const FeaturedProducts = () => {
                     className="md:basis-1/2 lg:basis-1/3 group"
                   >
                     <div className="p-1">
-                      <Card className="py-4 border dark:border-gray-300/20 shadow-none hover:shadow-md rounded-lg">
+                      <Card className="py-4 border dark:border-gray-300/20 shadow-none hover:shadow-md rounded-lg bg-stone-100/30 dark:bg-stone-800/10 dark:shadow-md">
                         <CardContent className="relative flex items-center justify-center px-6 py-2">
                           <img
                             src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images.data[0].attributes.url}`}

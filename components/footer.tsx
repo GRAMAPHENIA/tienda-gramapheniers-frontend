@@ -34,7 +34,7 @@ const Footer = () => {
             <span className="font-bold">Gramapheniers </span>
             Tienda
           </p>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 underline-offset-2">
             {dataFooter.map((data) => (
               <li key={data.id}>
                 <Link href={data.link} className="hover:underline me-4 md:me-6">
