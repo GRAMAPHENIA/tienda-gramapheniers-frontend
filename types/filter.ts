@@ -1,6 +1,6 @@
 export type FilterTypes = {
   result: ResultFilterTypes | null;
-  loading: bool;
+  loading: boolean;
   error: string;
 };
 

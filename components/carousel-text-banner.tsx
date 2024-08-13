@@ -41,7 +41,7 @@ const CarouselTextBanner = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-stone-100/30 dark:bg-stone-800/10  dark:text-white px-2 w-full shadow-md">
+    <div className="bg-stone-200/30 dark:bg-stone-800/10  dark:text-white px-2 w-full shadow-md">
       <Carousel
         className="w-full max-w-4xl mx-auto" 
         plugins={[

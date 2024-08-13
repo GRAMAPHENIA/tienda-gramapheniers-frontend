@@ -2,8 +2,6 @@
 
 import { useCart } from "@/hooks/use-cart";
 
-import { loadStripe } from "@stripe/stripe-js";
-
 import { formatPrice } from "@/lib/formatPrice";
 
 import { makePaymentRequest } from "@/api/payments";
@@ -18,23 +16,6 @@ const Page = () => {
 
   const prices = items.map((product) => product.attributes.price);
   const totalPrice = prices.reduce((total, price) => total + price, 0);
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
-  );
-
-  const buyStripe = async () => {
-    try {
-      const stripe = await stripePromise;
-      const res = await makePaymentRequest.pot("/api/orders", {
-        products: items,
-      });
-      await stripe?.redirectToCheckout({
-        sessionId: res.data.stripeSession.id,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div className="max-w-6xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
@@ -70,12 +51,11 @@ const Page = () => {
               <Button
                 className="w-full"
                 // TODO: realizar la funcion de pago.
-                onClick={buyStripe}
+                // onClick={buyMercado}
               >
                 Comprar
               </Button>
             </div>
-            
           </div>
         </div>
       </div>

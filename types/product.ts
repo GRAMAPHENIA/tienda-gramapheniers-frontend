@@ -1,10 +1,12 @@
 export type ProductType = {
+  id: any;
   attributes: {
+    title: any;
     productName: string;
     slug: string;
     description: string;
     active: boolean;
-    isFeatured: bollean;
+    isFeatured: boolean;
     taste: string;
     origin: string;
     price: number;
