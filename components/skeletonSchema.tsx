@@ -4,7 +4,7 @@ type SkeletonSchema = {
   grid: number;
 };
 
-const SkeletonSchema = (props: skeletonSchemaProps) => {
+const SkeletonSchema = (props: SkeletonSchema) => {
   const { grid } = props;
 
   return Array.from({ length: grid }).map((_, index) => (
