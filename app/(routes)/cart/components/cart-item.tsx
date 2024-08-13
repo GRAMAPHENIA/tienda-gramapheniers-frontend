@@ -11,7 +11,7 @@ interface CartItemProps {
   product: ProductType;
 }
 
-const CartItem = (props) => {
+const CartItem = (props: { product: any; }) => {
   const { product } = props;
   // const router = useRouter();
   const { removeItem } = useCart();
