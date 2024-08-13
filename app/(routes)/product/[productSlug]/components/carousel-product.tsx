@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import { Key } from "react";
 
 interface CarouselProductProps {
   images: {
@@ -18,7 +19,7 @@ interface CarouselProductProps {
   };
 }
 
-const CarouselProduct = (props) => {
+const CarouselProduct = (props: { images: any; }) => {
   const { images } = props;
 
   // console.log(images);
@@ -27,7 +28,7 @@ const CarouselProduct = (props) => {
     <div className="px-16">
       <Carousel>
         <CarouselContent>
-          {images.data.map((image) => (
+          {images.data.map((image: { id: Key | null | undefined; attributes: { url: any; }; }) => (
             <CarouselItem key={image.id}>
               <img
                 src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`}
