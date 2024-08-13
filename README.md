@@ -230,14 +230,8 @@ Dentro de la carpeta `api` creamos un nuevo directorio de nombre `payments.tsx`
 
 ...continuamos con `payments.tsx`.
 
-# STRAPI
+# Mercado Pago
 
-En el panel de `strapi` dentro de `Content-Type Builder` creamos una nueva coleccion de tipo `+ Create new collection type` de nombre `Order`.
+## INSTALACION
 
-dentro de orderagregamos un campo de tipo `texto` con el nombre de `stripeId` y otro de tipo `JSON` con el nombre `products`. Damos `Save`.
-
-
-
-
-
-
+`npm install nextjs-toploader`
